@@ -7,13 +7,24 @@ class Queue {
 
     // Ajoute un élément à la fin
     enqueue(element) {
-        this.array.push(element);
+        // this.array.push(element);
+        this.array[this.array.length] = element;
     }
 
     // Retire et retourne le premier élément
     dequeue() {
-        const removed = this.array[0]; 
-        this.array.shift(); 
+        // const removed = this.array[0]; 
+        // this.array.shift(); 
+        // return removed;
+        if (this.array.length === 0){
+            return undefined;
+        }
+        const removed = this.array[0];
+        const newArray = [];
+        for (let i = 1; i < this.array.length; i++) {
+            newArray[newArray.length] = this.array[i];
+        }
+        this.array = newArray;
         return removed;
     }
 
