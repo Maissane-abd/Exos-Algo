@@ -17,6 +17,8 @@ class Stack {
     
     const remove = this.array[this.array.length - 1];
     this.array.length = this.array.length - 1; // retire le dernier élément
+    //ou
+    delete this.array[this.array.length - 1];
     return remove;
   }
 
